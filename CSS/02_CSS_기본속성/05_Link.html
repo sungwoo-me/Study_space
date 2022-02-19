@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        1. a 태그 : 배경 디자인 
+    </h3>
+    <style>
+        .Link1 {
+            background-color: #FFFFE0;
+
+            color: rgb(47, 52, 79);
+
+            font-size: 1em;
+
+            text-decoration: none;
+        }
+    </style>
+
+    <a class = Link1 href="https://blog.naver.com/awhtjddn1">
+        IT공부 블로그로 이동하기 
+    </a>
+
+    <h3>2. a 태그 : 링크의 상태에 따른 스타일 적용 </h3>
+    <!--
+        1. link : 링크의 기본 상태이며, 사용자가 아직 한 번도 해당 링크를 통해 연결된 페이지를 방문하지 않은 상태입니다.
+
+        2. visited : 사용자가 한 번이라도 해당 링크를 통해 연결된 페이지를 방문한 상태입니다.
+
+        3. hover : 사용자의 마우스 커서가 링크 위에 올라가 있는 상태입니다.
+
+        4. active : 사용자가 마우스로 링크를 클릭하고 있는 상태입니다.
+
+        5. focus : 키보드나 마우스의 이벤트(event) 또는 다른 형태로 해당 요소가 포커스(focus)를 가지고 있는 상태입니다.
+    -->
+
+
+    <style>
+
+    
+        a:link { color: olive; }
+    
+        a:visited { color: brown; }
+    
+        a:hover { color: coral; }
+    
+        a:active { color: khaki; }
+    
+    </style>
+
+    <a href="https://blog.naver.com/awhtjddn1">
+        링크 상태에 따른 변화 
+    </a>
+
+    <h3>3. 링크를 활용한 버튼 만들기</h3>
+
+    <style>
+
+        .link2 ,a:link{
+    
+            background-color: #FFA500;
+    
+            color: maroon;
+    
+            padding: 15px 25px;
+    
+            text-align: center;
+    
+            text-decoration: none;
+    
+            display: inline-block;
+    
+        }
+        
+    </style>
+    
+    <a class = link2 href="https://blog.naver.com/awhtjddn1">
+        버튼 만들기 
+    </a>
+
+
+</body>
+</html>
