@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1. 함수의 호출  </h1>
+
+
+	<script>
+		function addNum(x, y, z) {	// x, y, z는 매개변수임.
+			return x + y + z;
+		}
+		document.write("인수가 3개 모두 전달되면 반환값은 " + addNum(1, 2, 3) + "입니다.<br>");	
+		document.write("인수가 2개만 전달되면 반환값은 " + addNum(1, 2) + "입니다.<br>");
+		document.write("인수가 1개만 전달되면 반환값은 " + addNum(1) + "입니다.<br>");
+		document.write("인수가 아무것도 전달되지 않으면 반환값은 " + addNum() + "입니다.");
+	</script>
+	
+    <h1> 2. 함수의 호출 : 적은 수의 인수</h1>
+
+	<script>
+		function addNum(x, y, z) {
+			if(x === undefined)	// 함수 호출시 x에 해당하는 인수가 전달되지 않은 경우
+				x = 0;			// 변수 x의 값을 undefined에서 0으로 변경함.
+			if(y === undefined) // 함수 호출시 y에 해당하는 인수가 전달되지 않은 경우
+				y = 0;			// 변수 y의 값을 undefined에서 0으로 변경함.
+			if(z === undefined) // 함수 호출시 z에 해당하는 인수가 전달되지 않은 경우
+				z = 0;			// 변수 z의 값을 undefined에서 0으로 변경함.
+			return x + y + z;
+		}
+		document.write("인수가 3개 모두 전달되면 반환값은 " + addNum(1, 2, 3) + "입니다.<br>");
+		document.write("인수가 2개만 전달되면 반환값은 " + addNum(1, 2) + "입니다.<br>");
+		document.write("인수가 1개만 전달되면 반환값은 " + addNum(1) + "입니다.<br>");
+		document.write("인수가 아무것도 전달되지 않으면 반환값은 " + addNum() + "입니다.");
+	</script>
+
+    <h1> 3. arguments 객체 </h1>
+
+	<script>
+		function addNum() {
+			var sum = 0;	// 합을 저장할 변수 sum을 선언함.
+			for(var i = 0; i < arguments.length; i++) {	// 전달받은 인수의 총 수만큼 반복함.
+				sum += arguments[i];					// 각각의 인수를 sum에 더함.
+			}
+			return sum;
+		}
+		document.write("인수가 3개 전달되면 반환값은 " + addNum(1, 2, 3) + "입니다.<br>");
+		document.write("인수가 2개 전달되면 반환값은 " + addNum(1, 2) + "입니다.<br>");
+		document.write("인수가 1개 전달되면 반환값은 " + addNum(1) + "입니다.<br>");
+		document.write("인수가 아무것도 전달되지 않으면 반환값은 " + addNum() + "입니다.<br>");
+		document.write("인수가 10개나 전달되도 반환값은 " + addNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) + "로 잘 동작합니다!!");
+	</script>
+	
+
+    <h1> 4. 디폴트 매개변수</h1>
+    
+	<script>
+		function mul(a, b = 1) { // 인수가 한 개만 전달되면 나머지 매개변수의 값을 언제나 1로 설정해 줌.
+            return a * b;
+		}
+		document.write("인수가 2개 전달되면 반환값은 " + mul(3, 4) + "입니다.<br>");
+		document.write("인수가 1개만 전달되면 반환값은 " + mul(3) + "입니다.<br>");
+	</script>
+	
+
+    <h1>5. 나머지 매개변수</h1> 
+    
+	<script>
+		// 첫 번째 인수를 변수 firstNum에 저장하고 나머지 인수들은 배열 restArgs에 저장함.
+		function sub(firstNum, ...restArgs) {
+			for(var i = 0; i < restArgs.length; i++) {
+				firstNum -= restArgs[i];
+			}
+			return firstNum;
+		}
+		document.write(sub(10, 2, 3) + "<br>");	// 10 - 2 - 3 = 5
+		document.write(sub(10, 1, 5, 8));		// 10 - 1 - 5 - 8 = -4
+	</script>
+	
+    
+
+</body>
+</body>
+</html>

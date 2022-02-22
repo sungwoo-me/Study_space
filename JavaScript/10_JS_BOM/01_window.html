@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>브라우저 창 크기 조절</h1>
+	<p>웹 브라우저의 창 크기를 조절한 뒤에 결과보기를 다시 눌러보세요!</p>
+
+	<script>
+		var windowWidth = window.innerWidth ;
+		var windowHeight = window.innerHeight ;
+
+		document.write("웹 브라우저의 너비는 " + windowWidth + "픽셀이고, 높이는 " + windowHeight + "픽셀입니다.");
+	</script>
+
+    	<h1>window 접두사의 생략</h1>
+
+	<script>
+		alert("전역 함수 호출시 window 접두사 생략 가능함!");						// 전역 함수
+		document.write("현재 브라우저의 수평 위치는 " + screenX + "입니다.<br>");	// 전역 변수
+		document.write("현재 브라우저의 수직 위치는 " + screenY + "입니다.<br>");	// 전역 변수
+		document.write(document.title);												// 전역 객체
+	</script>
+
+
+
+	<h1>브라우저 새 창 열기</h1>
+	<button onclick="openWindow()">새로운 창 열기</button>
+
+	<script>
+		var newWindowObj;
+		// 변수 strWindowFeatures를 통해 새롭게 여는 웹 브라우저 창의 옵션들을 일일이 설정할 수 있음.
+		var strWindowFeatures = "menubar = yes,location = yes,resizable = yes,scrollbars = yes,status = yes";
+		function openWindow() {
+			newWindowObj = window.open("/html/intro", "HTML 개요", strWindowFeatures);
+		}
+	</script>
+
+    	<h1>브라우저 창 닫기</h1>
+	<button onclick="openWindow()">새로운 창 열기</button>
+	<button onclick="closeNewWindow()">새로 연 창 닫기</button>
+
+	<script>
+		var newWindowObj;
+		var strWindowFeatures = "menubar = yes,location = yes,resizable = yes,scrollbars = yes,status = yes";
+		function openWindow() {
+			newWindowObj = window.open("/html/intro", "HTML 개요", strWindowFeatures);
+		}
+		function closeNewWindow() {	// 새롭게 연 브라우저 창을 window 객체를 이용하여 다시 닫을 수 있음.
+			newWindowObj.close();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1. 객체 이니셜라이저를 이용한 객체 생성</h1>
+
+	<script>
+		var kitty = {
+			name: "나비",
+			family: "코리안 숏 헤어",
+			age: 1,
+			weight: 0.1
+		};
+
+		document.write("우리 집 새끼 고양이의 이름은 " + kitty.name + "이고, 종은 " + kitty.family + "입니다.");
+	</script>
+	
+    
+	<h1>2. 생성자 함수를 이용한 객체 생성</h1>
+
+	<script>
+		var day = new Date(); // new 연산자를 사용하여 Date 타입의 객체를 생성함.
+
+		document.write("올해는 " + day.getFullYear() + "년입니다.");
+	</script>
+
+
+	<h1>3. Object.create() 메소드를 이용한 객체 생성</h1>
+
+	<script>
+		var obj = Object.create(null, {				// null 프로토타입을 사용하여 새로운 객체를 만들고
+            x: { value: 100, enumerable: true },	// x좌표를 나타내는 열거할 수 있는 속성과
+            y: { value: 200, enumerable: true }		// y좌표를 나타내는 열거할 수 있는 속성을 추가함.
+        });
+
+		document.write(obj.x + "<br/>");			// x좌표
+		document.write(obj.y + "<br/>");			// y좌표
+		document.write(Object.getPrototypeOf(obj));	// 객체의 프로토타입을 반환해 줌.
+	</script>
+
+    
+	
+</body>
+</html>
