@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--CDN설정을 해 주세요.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        li {
+            list-style:none;
+        }
+        body {
+            font: 12px/1.5 "굴림", Gulim;
+            margin:10px;
+        }
+        h2 {
+            margin-top:30px;
+        }
+        a {
+            color:#333;
+        }
+        #textZone {
+            width:700px;
+        }
+        #listWrap{
+            background:#cfcfcf;
+            width:110px;
+            padding:10px;
+        }
+        .list1 {
+            display:none;
+        }
+    </style>
+    <script>
+        // 이벤트
+        // 바닐라js와 마찬가지로 제이쿼리에서도
+        // 특정 element에 이벤트를 연결할 수 있습니다.
+        // 이런 이벤트를 붙이는 행위를 가리켜 이벤트 바인딩
+        // 이라고도 합니다(event binding, 이벤트 묶기)
+
+        // 이벤트 종류 및 설명
+        // click(함수) - 선택요소 클릭시 함수 실행
+        // dblclick(함수) - 선택요소 더블클릭시 함수 실행
+        // mouseover(함수) - 마우스를 선택요소 위에 올릴시 함수 실행
+        // mouseout(함수) - 커서가 선택요소 밖으로 벗어날시 함수 실행
+        // focus(함수) - 대상에 포커싱(탭키등으로 타겟잡기)시 함수 실행
+        // blur(함수) - 포커싱에서 해제될 시 함수 실행
+        // focusin(함수) - input요소 포커싱이 지정될 때 함수 실행
+        // focusout(함수) - input요소 포커싱이 풀릴 시 함수 실행
+        // keydown(함수) - 키 입력 감지시 함수 실행
+        // keypress(함수) - 키 입력 감지시 함수 실행
+        // mouseenter(함수) - 마우스가 선택요소 내로 이동시 함수 실행
+        // mouseleave(함수) - 마우스가 선택요소 밖으로 가면 함수 실행
+        // mousemove(함수) - 마우스 움직이는 매 순간 함수 실행
+        // resize(함수) - 창크기 변환시마다 함수 실행
+        // submit(함수) - submit버튼 눌릴시마다 함수 실행
+        // reset(함수) - reset버튼 눌릴시마다 함수 실행
+        // toggle(함수) - 클릭할때마다 함수를 번갈아 실행
+        // hover(함수) - 마우스 올렸을때, 벗어났을때 함수 실행
+        // unload(함수) - 문서 종료시 함수실행
+        // change(함수) - 값이 바뀌고 포커스 옮겨졌을때 실행
+        // bind(함수) - 여러개의 이벤트를 적용할 때 사용
+
+        // 실습용 코드
+        // window.onload
+        $(()=>{
+            // #btn1에 onClick 이벤트를 걸어서
+            // 클릭시 #textZone의 글씨색이 파란색으로 바뀌도록
+            $("#btn1").click(function(){
+               $("#textZone").css("color", "blue");
+            });
+
+            // #btn2에 .focus를 활용해서
+            // #textZone의 배경색을 노란색으로 바뀌게 해주세요.
+            // focus는 tab을 눌러서 btn2가 잡히면 실행됨.
+            $("#btn2").focus(()=>{
+                $("#textZone").css("background", "yellow");
+            });
+
+            // #btn3에 .bind를 활용해서 2개의 동작 이벤트를
+            // 동시에 걸어보겠습니다.
+            // .bind("이벤트1 이벤트2", 함수);
+            // 형태로 이벤트명을 나란히 적어주시면 됩니다.
+            $("#btn3").bind("mouseover focus", () => {
+                // 체이닝으로 css 2개 걸기
+                // #textZone의 글씨색 녹색, 볼드처리해주세요.
+                $("#textZone").css("color", "green").css("font-weight", "bold");
+            });
+
+            // #listWrap에 mouseenter시
+            // .list1의 .css() display 속성을 block으로
+            // mouseleave시 display속성을 none으로 바꾸게 이벤트를
+            // 2번에 걸쳐 설정해주세요.
+            $("#listWrap").mouseenter(()=>{
+                $(".list1").css("display", "block");
+            });
+            $("#listWrap").mouseleave(()=>{
+                $(".list1").css("display", "none");
+            });
+
+            // toggle은 함수 여러개를 나열해서 넣으면
+            // 클릭할때마다 함수가 바뀌어서 실행됩니다.
+            // .toggle(함수1(){}, 함수2(){}, 함수3(){} ...)
+            $("#btn4").toggle(function(){
+                $(this).next().css("background-color", "red");//첫 클릭시 빨강으로
+            }, function(){
+                $(this).next().css("background-color", "orange");//2번째 클릭시 오렌지로
+            }, function(){
+                $(this).next().css("background-color", "yellow");//3번째 클릭시 노랑으로
+            }, function(){
+                $(this).next().css("background-color", "white");//4번째 클릭시 흰배경으로
+            });
+
+            // hover는 마우스가 선택요소 영역에 오버되거나
+            // 아웃될 때 실행되는 함수를 각각 지정합니다.
+            // mouseenter, moverleave는 마우스가 올라가거나
+            // 떠날때 적용된 내용이 영구히 반영되지만
+            // hover는 그 두개를 동시에 묶어주기 때문에
+            // 항상 마우스를 올린동안만 실행되는 로직을
+            // 작성하기에 적합니다.
+            $(".hover").hover(function(){
+                // 첫 함수는 마우스오버시 실행될 내용
+                $(this).css("color", "aqua");
+            }, function(){
+                // 두 번째 함수는 마우스가 빠져나갈때 실행될 내용
+                $(this).css("color", "red");
+            });
+
+        });
+        
+
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>이벤트 연습</h1>
+        <p id="textZone">
+            웹 브라우저에서 버튼을 클릭한다거나 마우스를
+            움직이거나 하는 모든 행위를 이벤트라고 합니다.
+            그리고 이벤트 발생시 함수의 실행문이 수행되도록
+            이벤트를 지정하는것을 이벤트 핸들러라고 합니다.
+        </p>
+        <h2>click 메서드</h2>
+        <p><button id="btn1">click</button></p>
+
+        <h2>mouseover 메서드</h2>
+        <p><button id="btn2">mouseover</button></p>
+
+        <h2>bind 메서드</h2>
+        <p><button id="btn3">bind</button></p>
+
+        <h2>mouseleave 메서드</h2>
+        <div id="listWrap">
+            <h3>관련 사이트</h3>
+            <ul class="list1">
+                <li><a href="#">list1</a></li>
+                <li><a href="#">list2</a></li>
+                <li><a href="#">list3</a></li>
+                <li><a href="#">list4</a></li>
+            </ul>
+        </div>
+        <h2>toggle 메서드</h2>
+        <button id="btn4">toggle</button>
+        <p>누를 때마다 실행 함수를
+            차례대로 번갈아 가면서
+            실행합니다.<br/>
+            위의 toggle 버튼을 계속 클릭해보세요!!!
+        </p>
+        <h2>hover 메서드</h2>
+        <h3><a href="#" class="hover">hover</a></h3>
+    </div>
+</body>
+</html>

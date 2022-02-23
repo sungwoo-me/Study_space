@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko-kr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>부트스트랩</title>
+
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/kfonts2.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <!-- bootstrap.js -->
+  <script src="../js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <h1> 버튼 드롭다운 </h1>
+    <h4>일반적인 버튼 드롭 다운 </h4>
+    <div class="btn-group">
+      <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> 버튼1 <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-outline-primary" data-toggle="dropdown"> 버튼2 <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 클릭 <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <h4>분할된 버튼 드롭 다운 </h4>
+    <div class="btn-group">
+      <button type="button" class="btn btn-outline-primary"> 버튼1 </button>
+      <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger"> 버튼2 </button>
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <h4>버튼 드롭 다운 크기 조절 </h4>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary btn-lg"> 버튼1 </button>
+      <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"> 클릭 <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+
+    <hr>
+    <h4>드롭업과 드롭다운 비교 </h4>
+    <div class="btn-group dropup">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 버튼1 <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 버튼1 <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a class="dropdown-item" href="#">메뉴 1</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 2</a></li>
+        <li><a class="dropdown-item" href="#">메뉴 3</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">다른 메뉴 </a></li>
+      </ul>
+    </div>
+
+
+
+
+  </div>
+</body>
+
+</html>

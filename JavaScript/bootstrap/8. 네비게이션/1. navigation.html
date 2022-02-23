@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko-kr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부트스트랩</title>
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/kfonts2.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- bootstrap.js -->
+<script src="../js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+  <h1> 네비게이션  </h1>
+  <h4>탭형 네비게이션 </h4>
+     <ul class="nav nav-tabs">
+         <li class="nav-item"><a class="nav-link" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+  <br>
+  <h4>탭형 네비게이션  class="active" 추가할 경우 </h4>
+     <ul class="nav nav-tabs">
+         <li class="nav-item"><a class="nav-link" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link active" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+  <br>
+  <h4>알약형 네비게이션 </h4>
+     <ul class="nav nav-pills">
+         <li class="nav-item"><a class="nav-link" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+  <br>
+  <h4>알약형 네비게이션  class="active" 추가할 경우 </h4>
+     <ul class="nav nav-pills">
+         <li class="nav-item"><a class="nav-link active" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+
+  <br>
+  <h4>알약형 네비게이션은 수직으로 정렬 가능  </h4>
+    <div class="col-md-3">
+     <ul class="nav nav-pills flex-column">
+         <li class="nav-item"><a class="nav-link active" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+    </div>
+  <br>
+  <div class="clearfix"></div>
+    <h4>탭형 네비게이션 양쪽 정렬 </h4>
+     <ul class="nav nav-tabs nav-justified">
+         <li class="nav-item"><a class="nav-link active" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+    <br>
+     <h4>알약형 네비게이션 양쪽 정렬 </h4>
+     <ul class="nav nav-pills nav-justified">
+         <li class="nav-item"><a class="nav-link active" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+
+     <br>
+     <h4>class="disabled"을 이용한 링크 비활성화  </h4>
+     <ul class="nav nav-pills">
+         <li class="nav-item"><a class="nav-link" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link disabled" href="#">메뉴3</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴4</a></li>
+     </ul>
+
+    <br>
+  <h4>탭형 네비게이션 드롭다운  </h4>
+     <ul class="nav nav-tabs">
+         <li class="nav-item"><a class="nav-link active" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">여기 클릭 <span class="caret"></span></a>
+               <ul class="dropdown-menu" role="menu">
+                <li><a class="dropdown-item" role="menuitem" href="#">메뉴 1</a></li>
+                <li><a class="dropdown-item" role="menuitem" href="#">메뉴 2</a></li>
+                <li><a class="dropdown-item" role="menuitem" href="#">메뉴 3</a></li>
+                <li class="dropdown-divider"></li>
+                <li><a class="dropdown-item" role="menuitem" href="#">분리된 메뉴 </a></li>
+              </ul>
+         </li>
+     </ul>
+  <br>
+  <h4>알약형 형 네비게이션 드롭다운  </h4>
+     <ul class="nav nav-pills">
+         <li class="nav-item"><a class="nav-link active" href="#">메뉴1</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴2</a></li>
+         <li class="nav-item"><a class="nav-link" href="#">메뉴3</a></li>
+         <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">여기 클릭 <span class="caret"></span></a>
+               <ul class="dropdown-menu" role="menu">
+                <li><a class="dropdown-item" role="menuitem" href="#">메뉴 1</a></li>
+                <li><a class="dropdown-item" role="menuitem" href="#">메뉴 2</a></li>
+                <li><a class="dropdown-item" role="menuitem" href="#">메뉴 3</a></li>
+                <li class="dropdown-divider"></li>
+                <li><a class="dropdown-item" role="menuitem" href="#">분리된 메뉴 </a></li>
+              </ul>
+         </li>
+     </ul>
+  <br>
+
+  <!-- Nav tabs -->
+  <h4>Toggleable / Dynamic Tabs</h4>
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+<br>
+
+<!-- Nav pills -->
+<h4>Toggleable / Dynamic Pills</h4>
+  <ul class="nav nav-pills" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="pill" href="#home_p">home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu1_p">Menu 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="pill" href="#menu2_p">Menu 2</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home_p" class="container tab-pane active"><br>
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1_p" class="container tab-pane fade"><br>
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2_p" class="container tab-pane fade"><br>
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+</div>
+</body>
+</html>

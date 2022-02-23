@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko-kr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부트스트랩</title>
+
+<!-- Bootstrap -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/kfonts2.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- bootstrap.js -->
+<script src="../js/bootstrap.min.js"></script>
+
+<style type="text/css">
+body {
+	padding-bottom: 50px;
+}
+</style>
+</head>
+<body>
+
+
+
+
+
+
+<div class="container">
+  <h2>Modal 예시</h2>
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" 
+      data-toggle="modal" data-target="#myModal">
+    모달 열기
+  </button><br>
+
+  <!--모달 여는 버튼 2번째를 만들어주세요.-->
+  <button type="button" class="btn btn-danger" 
+      data-toggle="modal" data-target="#myModal">
+    모달2번
+  </button><br/>
+
+  <hr>
+	<a href="#myModal" data-toggle="modal">
+	  여기를 클릭하시면 모달 윈도우가 실행됩니다.
+	</a>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--모달쪽에 폼을 씌워서
+        회원가입창으로 바꿔주세요.-->
+        <form action="#" method="get">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">회원가입창</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <input type="text" name="name" placeholder="이름" class="form-control"/><br/>
+            <input type="password" name="pw" placeholder="비번" class="form-control"/><br/>
+            <input type="text" name="id" placeholder="아이디" class="form-control"/><br/>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            <input type="submit" value="가입하기" class="btn btn-primary"/>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
