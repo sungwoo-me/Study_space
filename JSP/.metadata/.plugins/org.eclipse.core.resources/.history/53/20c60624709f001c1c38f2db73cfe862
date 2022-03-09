@@ -1,0 +1,5 @@
+package kr.co.ict;
+
+public class JDBC_pstmt_Delete {
+
+}
