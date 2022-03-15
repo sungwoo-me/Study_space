@@ -48,10 +48,16 @@ public class JDBC_pstmt_Update {
 			
 			pstmt.executeUpdate();
 
-			
+			// .close()로 열린 자료 닫기
+			con.close();
+			pstmt.close();
+			sc.close();
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
+		}finally {
+			// 종료 안내 구문 + .close()로 열린 자료 닫기
+			System.out.println("로직 실행 완료 !! ");
 		}
 		
 		
