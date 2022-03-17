@@ -1,5 +1,5 @@
 <%@ page import = "java.sql.*" %>
-
+<%@ page import = "kr.co.ict.UserDAO" %>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -16,8 +16,13 @@
 	// 사용자 입력한 데이터 토대로 
 	// 내부에 DB 연동 후 INSERT 구문 실행 하도록 구현 
 	
+	UserDAO dao = UserDAO.getInstance();
+	dao.insertUser(name, id, pw, email) ;
 	
 	
+	
+	
+	/*
 	String dbtype = "com.mysql.cj.jdbc.Driver";
 	String dburl = "jdbc:mysql://localhost:3306/jdbc_practice01";
 	String dbid = "root";
@@ -59,6 +64,11 @@
 		// 4. out.println("외원가입이 완료되었습니다. ")  띄어서 가입 완료 알리기 
 		out.println("회원가입이 완료되었습니다.") ;
 	}
+	
+	*/
+	
+	
+	
 %>    
 
     

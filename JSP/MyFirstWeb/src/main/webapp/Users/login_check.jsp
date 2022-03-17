@@ -37,14 +37,17 @@
 		
 		*/
 		
-		UserDAO dao = new UserDAO();
-		
+
+		UserDAO dao = UserDAO.getInstance();		
 		UserVo user = dao.getUserData(id);
 		
 		System.out.println("DB에서 받아온 정보 : " + user);
 		
 		//4. 실행 
-		if(user.getuId()!= null){
+		
+	
+		
+		if(user != null){
 			String uid =user.getuId() ;
 			String upw = user.getuPw() ;
 			System.out.println("DB내 유저 아이디 : " + uid ) ;			
@@ -61,9 +64,8 @@
 		}else{
 			out.println("존재하지 않는 아이디 입니다.다시 시도해주 세요.");
 		}
-		
-		
-	
+				
+			
 	
 	
 %>

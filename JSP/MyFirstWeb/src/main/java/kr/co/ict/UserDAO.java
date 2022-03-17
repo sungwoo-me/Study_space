@@ -2,6 +2,11 @@ package kr.co.ict;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 import java.sql.*;
 public class UserDAO {
 
@@ -10,9 +15,12 @@ public class UserDAO {
 	private String dburl = "jdbc:mysql://localhost:3306/jdbc_practice01";
 	private String dbid = "root";
 	private String dbpw = "mysql";
+	private DataSource ds ; 
 	
 	// 생성할 때 자동으로 Class.forName()을 실행하게 만든다. 
 	// 이것은 어떤 쿼리문을 실행해도 공통적으로 실행하는 부분 
+	
+	/*
 	public UserDAO() {
 		try {
 			Class.forName(dbtype);
@@ -21,6 +29,40 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
+	*/
+	
+	// 싱글턴 패턴 처리 
+	// 싱글턴은 하나 를 생성한 다음
+	// 요청시 마다 생성된 DAO의 주소값만 공유해서
+	// DAO생성에 필요한 시간을 절약하기 위해 사용 한다. 
+	
+	// 3. DAO 내부에 멤버 변수로 UserDAO를 하나 생성한다.
+	private static UserDAO dao = new UserDAO();
+	
+	
+	// 1. 생성자 private 처리해서 외부에서 생성명령을 내릴수 없게 처리한다. 
+	private UserDAO() {
+		try {
+			Context ct = new InitialContext();
+			ds = (DataSource)ct.lookup("java:comp/env/jdbc/mysql");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// 2. static 키워드를 이용해서 한번만 생성하고 그 이후로는 
+	// 주소를 공유하는 getInstance() 메서드를 생성 
+	
+	public static UserDAO getInstance() {
+		if(dao == null) {
+			dao = new UserDAO();
+		} 
+		return dao ; 
+	}
+	
+	
+	
+	
 	
 	// user_list2.jsp 코드 로직을 대체 
 	// user_list2.jsp에서 전체 유저 목록을 필요로 하기 때문에
@@ -38,7 +80,7 @@ public class UserDAO {
 		List<UserVo> userList = new ArrayList<>();
 		
 		try {
-			con = DriverManager.getConnection(dburl , dbid , dbpw); 
+			con = ds.getConnection();
 			String sql = "SELECT * FROM userinfo";
 			pstmt = con.prepareStatement(sql);
 			
@@ -81,7 +123,7 @@ public class UserDAO {
 		PreparedStatement pstmt  = null ;
 		UserVo user = null ;		// 2. try 블럭 내부에서 DB연결을 해주세요. 필요한 URL ,ID, PW는 상단에 멤버변수로 이미 존재합니다.
 		try {
-			con = DriverManager.getConnection(dburl , dbid , dbpw); 
+			con = ds.getConnection();
 			String sql = "SELECT * FROM userinfo WHERE uid = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1,sId);
@@ -137,7 +179,7 @@ public class UserDAO {
 		
 		
 		try {
-			con = DriverManager.getConnection(dburl , dbid , dbpw); 
+			con = ds.getConnection();
 			String sql = "UPDATE userinfo SET uname = ?, upw=? , uemail = ? WHERE uid = ?" ;
 			pstmt = con.prepareStatement(sql);
 			
@@ -170,5 +212,75 @@ public class UserDAO {
 	// DAO파일에 생성하신 후, member_out.jsp 에서도 해당 메서드를 쓰도록 고쳐주세요
 
 	
+	public void memberOut(String id) {
+		// 접속 로직은 getALLUserList()와 큰 차이가 없고 쿼리문만 좀 다릅니다. 
+		
+		// 1. Connection, PreparedStatement, ResultSet 변수 선언만 해주세요. 
+		Connection con  = null;
+		PreparedStatement pstmt  = null ;
+		
+		
+		try {
+			con = ds.getConnection();
+			String sql = "DELETE FROM userinfo WHERE uid=?" ;
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1,id);
+		
+			pstmt.executeUpdate();
 
+			
+		
+		// 5. catch, finally 블럭을 작성해주시고 finally에서 자원회수까지 마쳐주세요 
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				// .close() 는 무조건 try 블록 내부에 있어야 한다. 
+				con.close();
+				pstmt.close();
+			}catch(SQLException se) {
+				se.printStackTrace();
+			}
+		}
+	
+	}
+	
+	
+	// 회원가입 로직 insertUser()를 처리해주세요. 
+	public void insertUser(String name, String id ,String pw , String email) {
+		Connection con  = null;
+		PreparedStatement pstmt  = null ;
+		
+		
+		try {
+			con = ds.getConnection();
+			String sql = "INSERT INTO userinfo VALUES(?,?,?,?)" ;
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1,name);
+			pstmt.setString(2,id);
+			pstmt.setString(3,pw);
+			pstmt.setString(4,email);
+			
+			pstmt.executeUpdate();
+
+			
+		
+		// 5. catch, finally 블럭을 작성해주시고 finally에서 자원회수까지 마쳐주세요 
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				// .close() 는 무조건 try 블록 내부에 있어야 한다. 
+				con.close();
+				pstmt.close();
+				
+			}catch(SQLException se) {
+				se.printStackTrace();
+			}
+		}
+	
+	}
+	
 }

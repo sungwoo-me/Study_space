@@ -15,7 +15,8 @@
 	String sid= (String)session.getAttribute("seesion_id");
 	
 	
-	UserDAO dao = new UserDAO();
+
+	UserDAO dao = UserDAO.getInstance();
 	dao.updateCheck(sid, pw, name, email);
 	
 	/*

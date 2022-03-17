@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import = "java.sql.*" %>
+<%@ page import = "kr.co.ict.UserDAO" %>
 <%
 	String sid = (String)session.getAttribute("seesion_id") ; 
 
@@ -11,6 +12,14 @@
 	// 회원탈퇴 후 body태그 내에는 "아이디 회원의 탈퇴가 완료되었습니다. 
 	// 출력 후 실제 DB에 DELETE 구문을 날려 삭제 처리 하기 
 	
+	
+	
+
+	UserDAO dao = UserDAO.getInstance();
+	dao.memberOut(sid);
+	
+	
+	/*
 	String dbtype = "com.mysql.cj.jdbc.Driver";
 	String dburl = "jdbc:mysql://localhost:3306/jdbc_practice01";
 	String dbid = "root";
@@ -56,6 +65,7 @@
 		//response.sendRedirect("login_form.jsp");
 	}
 	
+	*/
 %>
     
 <!DOCTYPE html>
