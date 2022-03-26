@@ -94,4 +94,148 @@ public class BoardDAO {
 		return boardList;
 	}
 	
+
+	public void inserBoard(String title, String content, String writer) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		// try블럭 진입 전에 ArrayList 선언
+		try {
+			// Connection, PreparedStatement, ResultSet을 선언합니다.
+			con = ds.getConnection();
+			// SELECT * FROM userinfo 실행 및 ResultSet에 저장
+			String sql = "INSERT INTO boardTb1(title, content, writer) VALUES(?, ? ,?)";
+			pstmt = con.prepareStatement(sql);
+				
+			//1번 ? 자리에 uid 라는 변수를 넣겠다. 
+			
+			pstmt.setString(1,title);
+			pstmt.setString(2,content);
+			pstmt.setString(3,writer);
+		
+				
+			// BoardVO ArrayList에 rs에 든 모든 자료를 저장해주세요.
+			pstmt.executeUpdate();
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+				pstmt.close();
+			} catch(SQLException se) {
+				se.printStackTrace();
+			}
+		}	
+	}
+	
+	public BoardVO getBoardDetail(int board_num) {
+		ResultSet rs =  null ;
+		Connection con  = null;
+		PreparedStatement pstmt  = null ;
+		BoardVO board = null ;		// 2. try 블럭 내부에서 DB연결을 해주세요. 필요한 URL ,ID, PW는 상단에 멤버변수로 이미 존재합니다.
+		
+		try {
+			// Connection, PreparedStatement, ResultSet을 선언합니다.
+			con = ds.getConnection();
+			// SELECT * FROM userinfo 실행 및 ResultSet에 저장
+			String sql = "SELECT * FROM boardTb1 WHERE board_num=?";
+			pstmt = con.prepareStatement(sql);
+				
+			pstmt.setInt(1, board_num);
+			rs= pstmt.executeQuery();
+			//1번 ? 자리에 uid 라는 변수를 넣겠다. 
+
+			if(rs.next()){
+				int boardNum = rs.getInt("board_num");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String writer = rs.getString("writer");
+				Date bDate = rs.getDate("bdate");
+				Date mDate = rs.getDate("mdate");
+				int hit = rs.getInt("hit");				
+				board = new BoardVO(boardNum, title ,content, writer,bDate, mDate, hit );
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+				pstmt.close();
+				rs.close(); 
+			} catch(SQLException se) {
+				se.printStackTrace();
+			}
+		}	
+	
+		return board ;
+	}
+	
+
+	public void deleteBoard(int board_num) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		// try블럭 진입 전에 ArrayList 선언
+		try {
+			// Connection, PreparedStatement, ResultSet을 선언합니다.
+			con = ds.getConnection();
+			// SELECT * FROM userinfo 실행 및 ResultSet에 저장
+			String sql = "DELETE FROM boardTb1 WHERE board_num = ?";
+			pstmt = con.prepareStatement(sql);
+				
+			//1번 ? 자리에 uid 라는 변수를 넣겠다. 
+			
+			pstmt.setInt(1, board_num);
+
+			System.out.println(pstmt);
+			// BoardVO ArrayList에 rs에 든 모든 자료를 저장해주세요.
+			pstmt.executeUpdate();
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+				pstmt.close();
+			} catch(SQLException se) {
+				se.printStackTrace();
+			}
+		}	
+	}
+	
+	public void updateBoard(int board_num, String title, String content) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		// try블럭 진입 전에 ArrayList 선언
+		try {
+			// Connection, PreparedStatement, ResultSet을 선언합니다.
+			con = ds.getConnection();
+			// SELECT * FROM userinfo 실행 및 ResultSet에 저장
+			String sql = "UPDATE boardTb1 SET title = ?, content = ? , mdate=now() WHERE board_num = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			//1번 ? 자리에 uid 라는 변수를 넣겠다. 
+			
+			pstmt.setString(1, title);
+			pstmt.setString(2, content);
+			pstmt.setInt(3, board_num);
+
+			System.out.println(pstmt);
+			// BoardVO ArrayList에 rs에 든 모든 자료를 저장해주세요.
+			pstmt.executeUpdate();
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+				pstmt.close();
+			} catch(SQLException se) {
+				se.printStackTrace();
+			}
+		}
+	}
+	
+	
 }

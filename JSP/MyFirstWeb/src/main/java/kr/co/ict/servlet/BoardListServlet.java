@@ -34,6 +34,7 @@ public class BoardListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doget");
 		// 1. 접속시 BoardDAO생성
+		// 싱글턴 패턴 
 		BoardDAO dao = BoardDAO.getInstance();
 		// 2. BoardDAO의 getAllBoardList() 호출해 전체 게시글 정보 받아오기
 		List<BoardVO> boardList = dao.getAllBoardList();
