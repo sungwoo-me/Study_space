@@ -59,7 +59,7 @@ public class insertBoardServlet extends HttpServlet {
 		String content = request.getParameter("content");
 		String writer = request.getParameter("writer");
 		
-		dao.inserBoard(title, content, writer);
+		dao.insertBoard(title, content, writer);
 		// 다 끝났다면, 리다이렉트 방식으로 서블릿 주소 boardlist로 이동시킵니다.
 		response.sendRedirect("http://localhost:8181/MyFirstWeb/boardList");
 	}

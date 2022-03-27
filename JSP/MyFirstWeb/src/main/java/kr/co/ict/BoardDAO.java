@@ -95,7 +95,7 @@ public class BoardDAO {
 	}
 	
 
-	public void inserBoard(String title, String content, String writer) {
+	public void insertBoard(String title, String content, String writer) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
