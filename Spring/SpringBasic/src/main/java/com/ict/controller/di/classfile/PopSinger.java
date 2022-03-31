@@ -3,12 +3,11 @@ package com.ict.controller.di.classfile;
 import org.springframework.stereotype.Component;
 
 @Component
-
-public class PopSinger extends Singer{
-
+public class PopSinger extends Singer {
 	
 	@Override
 	public void sing() {
-		System.out.println("ÆË °¡¼ö°¡ ³ë·¡¸¦ ÇÕ´Ï´Ù. ");
-	}	
+		System.out.println("íŒê°€ìˆ˜ê°€ ì˜ì–´ë¡œ ë…¸ë˜ë¥¼ í•©ë‹ˆë‹¤.");
+	}
+
 }

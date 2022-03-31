@@ -2,13 +2,12 @@ package com.ict.controller.di.classfile;
 
 import org.springframework.stereotype.Component;
 
-// ºó ÄÁÅ×ÀÌ³Ê¿¡ µî·ÏÇÏ±â
-
+// ë¹ˆ ì»¨í…Œì´ë„ˆì— ë“±ë¡í•´ì£¼ì„¸ìš”.
 @Component
 public class Book {
 
 	public void read() {
-		System.out.println("Ã¥À» ÀĞ½À´Ï´Ù.");
+		System.out.println("ì±…ì„ ì½ìŠµë‹ˆë‹¤.");
 	}
 	
 }

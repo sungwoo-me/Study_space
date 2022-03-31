@@ -2,14 +2,14 @@ package com.ict.controller.di.classfile;
 
 import org.springframework.stereotype.Component;
 
-// @Component
+//@Component
+// Singerë¥¼ ìƒì†í•œ ë°œë¼ë“œê°€ìˆ˜ì™€ íŒ ê°€ìˆ˜ë¥¼ ìƒì„±í•´ì„œ ë¹ˆ ì»¨í…Œì´ë„ˆì— ë“±ë¡í•´ë³´ê² ìŠµë‹ˆë‹¤.
 public class Singer {
 	
-	// °¡¼ö´Â ¹«´ë°¡ ÀÖ°Ç ¾ø°Ç ³ë·¡ °¡´É
-	// ´Ù¸¥ ¾î¶² ¿ä¼Ò ¾øÀÌ ³ë·¡ ±â´Éµµ °¡´É 
-
+	// ê°€ìˆ˜ëŠ” ë¬´ëŒ€ê°€ ìˆê±´ ì—†ê±´ ë…¸ë˜ë¥¼ í•  ìˆ˜ ìˆê¸° ë•Œë¬¸ì—
+	// ë‹¤ë¥¸ ì–´ë–¤ ìš”ì†Œ ì—†ì´ ì˜¤ì§ ë…¸ë˜ê¸°ëŠ¥ë§Œ ë„£ì–´ë‘¡ë‹ˆë‹¤.
 	
 	public void sing() {
-		System.out.println("°¡¼ö°¡ ³ë·¡¸¦ ÇÑ´Ù. ");
+		System.out.println("ê°€ìˆ˜ê°€ ë…¸ë˜ë¥¼ í•©ë‹ˆë‹¤.");
 	}
 }

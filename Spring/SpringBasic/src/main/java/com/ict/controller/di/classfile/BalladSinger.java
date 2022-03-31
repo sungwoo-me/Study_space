@@ -5,13 +5,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class BalladSinger extends Singer {
 
-	// Singer ¸¦ »ó¼ÓÇÏ°í sing()À» ¿À¹ö¶óÀÌµùÇØ¼­
-	// ¹ß¶óµå °¡¼ö°¡ ³ë·¡¸¦ ºÎ¸¥´Ù. 
-	
+	// Singerë¥¼ ìƒì†í•˜ê³  sing()ì„ ì˜¤ë²„ë¼ì´ë”©í•´ì„œ
+	// "ë°œë¼ë“œ ê°€ìˆ˜ê°€ ì†Œëª°ì´ ì°½ë²•ìœ¼ë¡œ ë…¸ë˜ë¥¼ í•©ë‹ˆë‹¤."
+	// ë¥¼ ì½˜ì†”ì— ì°ë„ë¡ ì„¤ì •í•´ì¤ë‹ˆë‹¤.
+	// ê·¸ë¦¬ê³  ë¹ˆ ì»¨í…Œì´ë„ˆì— ë“±ë¡í•´ì£¼ì„¸ìš”.
 	@Override
-	
 	public void sing() {
-		System.out.println("¹ß¶óµå °¡¼ö°¡ ³ë·¡¸¦ ÇÕ´Ï´Ù. ");
+		System.out.println("ë°œë¼ë“œ ê°€ìˆ˜ê°€ ì†Œëª°ì´ ì°½ë²•ìœ¼ë¡œ ë…¸ë˜ë¥¼ í•©ë‹ˆë‹¤.");
 	}
 	
 	
