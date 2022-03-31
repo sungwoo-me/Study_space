@@ -4,6 +4,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 import com.ict.controller.di.classfile.BalladSinger;
 import com.ict.controller.di.classfile.Broadcast;
+import com.ict.controller.di.classfile.Library;
 import com.ict.controller.di.classfile.Singer;
 import com.ict.controller.di.classfile.Stage;
 
@@ -11,6 +12,14 @@ public class DIMainSpringver {
 
 	public static void main(String[] args) {
 		// root-context라는 공장에 저장된 객체를 뽑아서  써야한다.
+		
+		String[] address = {"file:src/main/webapp/WEB-INF/spring/root-context.xml" , "file:src/main/webapp/WEB-INF/spring/root-context2.xml"};
+		GenericXmlApplicationContext context = 
+				new GenericXmlApplicationContext(address);
+	
+		
+		/*
+		
 		// 1. 가져오기 위한 호출코드
 		GenericXmlApplicationContext context = 
 				new GenericXmlApplicationContext("file:src/main/webapp/WEB-INF/spring/root-context.xml");
@@ -42,6 +51,11 @@ public class DIMainSpringver {
 		stage1.perform();
 		Stage stage2 = context.getBean("stage2", Stage.class);
 		stage2.perform();
+		
+		*/
+	
+		Library library = context.getBean("library1", Library.class);
+		library.browse();
 	}
 
 }

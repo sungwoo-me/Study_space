@@ -12,6 +12,7 @@
 	<context:component-scan base-package="com.ict.controller.di.classfile"/>
 	
 	
+	
 	<!-- 빈 컨테이너 내부에 들어갈 객체 수동생성 !! -->
 	<bean id="stage1" class = "com.ict.controller.di.classfile.Stage">
 		<!--  의존성 주입을 위해 클래스에 생성자나  setter를 생성해둔 경우 지 정해서 주입 가능 
@@ -26,5 +27,5 @@
 	
 	</bean>
 	
-	
+
 </beans>
