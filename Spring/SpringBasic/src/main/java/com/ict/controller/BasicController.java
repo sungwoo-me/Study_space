@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -131,6 +132,33 @@ public class BasicController {
 		
 		return "scoreResult";
 	}
+	
+	// 주소는 /page로 한ㄴ다
+	// get방식 접속만 호용
+	// 메서드명은 임의로
+	// page.jsp로 연결
+	
+	@GetMapping(value="/page/{bookNum}/{pageNum}")
+	public String page(@PathVariable int pageNum,@PathVariable int bookNum, Model model) {
+		// page.jsp를 view 폴더에 만들기
+		// 해당 페이지는 int pageNum을 받아서 바인딩 
+		// page.jsp 본문에 현재 ${page}를 보고 계십니다.
+		// 와 함께 ㅇ더미데이터를이용해 본문글 작성 
+		model.addAttribute("page", pageNum);
+		model.addAttribute("book", bookNum);
+
+		return "page";
+	}
+	
+	@GetMapping(value="/rate/{won}")
+	public String page(@PathVariable int won , Model model) {
+		double result = won /42.29;
+		model.addAttribute("won", won);
+		model.addAttribute("result", result);
+		
+		return  "rate";
+	}
+	
 	
 	
 }
