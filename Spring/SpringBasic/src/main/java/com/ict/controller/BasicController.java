@@ -1,6 +1,7 @@
 package com.ict.controller;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ict.controller.vo.UserVO;
 
 // 어노테이션에 네 종류가 있었는데(@Component, @Repository, @Controller, @Service)
 // 컨트롤러를 만드는 경우이니 당연히 @Controller를 씁니다.
@@ -159,6 +163,36 @@ public class BasicController {
 		return  "rate";
 	}
 	
+	@GetMapping("/getList")
+	public String getList(
+			@RequestParam("array")ArrayList<String> array, Model model) {
+		model.addAttribute("array",array);
+		return "getList";
+	}
 	
+	// 만약 주소와 매칭된 메서드의 리턴 자료형을 String이 아닌 void로 처리하는 경우는
+	// 지정주소.jsp로 바로 연결 
+	// 주소와 파일명이 일치한다면 써도 된다. 
+	@GetMapping("/test")
+	public void goTest() {
+		//바로 test.jsp 로 연동된다. 
+	}
+	
+	@GetMapping("/userInfo")
+	public String userInfoForm(){
+		return "userForm";
+	}
+	
+	@PostMapping("/userInfo")
+	public String getUserInfo(UserVO userVO, Model model) {
+		// 변수명은 userVO로 지정, 실제로는 내부 멤버변수의 이름으로 데이터를 받는다. 
+	
+		// 바인딩 문법 작성  
+		model.addAttribute("userVO", userVO);
+
+		
+		return "user" ;
+	}
+
 	
 }
