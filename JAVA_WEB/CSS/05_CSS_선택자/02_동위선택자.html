@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. 일반 동위 선택자</h3>    
+    <p>일반 동위 선택자는 해당 요소와 동위 관계에 있으며, 해당 요소보다 뒤에 존재하는 특정 타입의 요소 모드를 선택합니다.</p>
+    <style>
+		div{ border: 3px solid #F08080; }
+		div ~ p { background-color: #FFE4E1; }
+	</style>
+    
+	<p>이 p 태그는 div 태그의 동위 요소 이지만 div 태그보다 앞에 나옵니다!</p>
+	<div>
+		<p>이 p 태그는 div 태그의 child 입니다!</p>
+	</div>
+	<p>이 p 태그는 div 태그의 동위 요소중 div 뒤에 나옵니다 입니다!</p>
+
+    <h3>2. 인접 동위 선택자</h3>
+    <p>해당 요소와 동위 관게에 잇으며, 해당 요소의 바로 뒤에 존재하는 특정 타입의 요소를 모두 선택합니다. </p>
+	<style>
+		div{ border: 3px solid #F08080; }
+		div + p { background-color: #FFE4E1; }
+	</style>
+    
+	<div>
+		<p>이 p 태그는 div 태그의 sibling 입니다!</p>
+		<div>
+			<p>이 p 태그는 div 태그의 child 입니다!</p>
+		</div>
+		<p>이 p 태그는 div 태그 바로 뒤에 나오는 sibling 입니다!</p>
+		<p>이 p 태그는 div 태그의 sibling 입니다!</p>
+	</div>
+	<p>이 p 태그는 div 태그 바로 뒤에 나오는 sibling 입니다!</p>
+	<p>이 p 태그는 div 태그의 sibling 입니다!</p>
+
+</body>
+</html>

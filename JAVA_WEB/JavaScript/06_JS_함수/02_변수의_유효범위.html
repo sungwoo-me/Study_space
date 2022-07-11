@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>
+        1. 지역 변수 
+    </h1>
+
+    <p>지역 변수는 함수 내에서만 유효하며 종료되면 메모리에서 사라진다. </p>
+    <script>
+        function localNum(){
+            var num = 10 ;
+            document.write("함수 내부에서 변수 num의 타입은 " + typeof num + "입니다" + "<br>");
+        }
+        localNum();
+        document.write("함수 호출이 끝난 뒤 변수 num의 타입은"  + typeof num + "입니다 . ")
+    </script>
+
+
+
+    <h1>2. 전역 변수 </h1>
+    <p>전역변수란 함수 외부에서 선언된 변수를 가리킨다. </p>
+    <p>프로그램 어느 영역에서나 접근 가능 하며 , 웹 페이지가 닫혀야만 사라진다. </p>
+   
+   <script>
+       var num =10 ;
+        function globalNum() {
+
+            document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>"); // 10
+
+            num = 20; // 전역 변수 num의 값을 함수 내부에서 변경함.
+
+            }
+
+        globalNum();  // 함수 globalNum()을 호출함.
+
+        document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다."); // 20
+    </script>
+</body>
+</html>

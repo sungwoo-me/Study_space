@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .border {border :2px solid orange}
+        .bordercollapse {border-collapse : collapse}
+        .borderspacing {width : 100% ; border-collapse: seperate ; border-spacing :20px 30px;}
+        .align{text-align : center}
+        .vertical_align {vertical-align: top; height :50px}
+    </style>
+    
+    <h3>1. border 속성 : 테두리 </h3>
+    <table>
+        <tr>
+            <th class = "border">
+                열 제목 1
+            </th>
+            <th class = "border">
+                열 제목 2
+            </th>
+        </tr>
+        <tr>
+            <td class = "border">
+                내용 1
+            </td>
+            <td class = "border">
+                내용 2 
+            </td>
+        </tr>
+    </table>
+
+    <h3>2. border-collapse 속성 : 테이블의 테두리 한줄 표현 </h3>
+    <table class = "bordercollapse">
+        <tr>
+            <th class = "border">
+                열 제목 1
+            </th>
+            <th class = "border">
+                열 제목 2
+            </th>
+        </tr>
+        <tr>
+            <td class = "border">
+                내용 1
+            </td>
+            <td class = "border">
+                내용 2 
+            </td>
+        </tr>
+    </table>
+
+    <h3>3. border-spacing 속성 : 테이블 간 여백 설정 </h3>
+    <table class = "borderspacing">
+        <tr>
+            <th class = "border">
+                열 제목 1
+            </th>
+            <th class = "border">
+                열 제목 2
+            </th>
+        </tr>
+        <tr>
+            <td class = "border">
+                내용 1
+            </td>
+            <td class = "border">
+                내용 2 
+            </td>
+        </tr>
+    </table>
+
+    <h3>4. text-align 속성 : 텍스트의 수평 방향 설정 (가운데 설정) </h3>
+
+    <table class = "align">
+        <tr>
+            <th class = "border">
+                열 제목 1
+            </th>
+            <th class = "border">
+                열 제목 2
+            </th>
+        </tr>
+        <tr>
+            <td class = "border">
+                내용 1
+            </td>
+            <td class = "border">
+                내용 2 
+            </td>
+        </tr>
+    </table>
+
+    <h3>5. vertical-align 속성 : 테이블 요소내부 수직 방향 정렬 </h3>
+
+    <table class = "border">
+        <tr>
+            <th class = "vertical_align">
+                열 제목 1
+            </th>
+            <th class = "vertical_align">
+                열 제목 2
+            </th>
+        </tr>
+        <tr>
+            <td class = "vertical_align">
+                내용 1
+            </td>
+            <td class = "vertical_align">
+                내용 2 
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

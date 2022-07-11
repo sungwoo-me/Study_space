@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>구조 의사 클래스</h2>
+    <p>HTML 요소의 계층 구조에서 특정 위치에 요소 선택 가능하다. </p>
+    <h3>first-child</h3>
+    <style>
+        p:first-child { color: red; font-weight: bold; }
+        p:last-child { color: rgb(47, 0, 255); font-weight: bold; }
+        p:nth-child(2) { color: rgb(102, 255, 0); font-weight: bold; }
+        p:nth-last-child(3) { color: rgb(255, 0, 212); font-weight: bold; }
+
+
+
+
+        div {outline-style: solid; outline-color: rgb(255, 0, 55); outline-width: 10px;}
+
+    </style>
+
+	<div class="first">
+ 
+		<p>이 p 태그는 div 태그의 첫 번째 child 입니다!</p>
+        <p>이 p 태그는 div 태그의 두 번째 child 입니다!</p>
+
+        <div class="second">
+			<p>이 p 태그는 div 태그의 첫 번째 child 입니다!</p>
+			<p>이 p 태그는 div 태그의 두 번째child 입니다!</p>
+            <p>이 p 태그는 div 태그의 세 번째child 입니다!</p>
+			<p>이 p 태그는 div 태그의 네 번째child 입니다!</p>
+            <p>이 p 태그는 div 태그의 마지막 child 입니다!</p>
+		</div>
+
+        <p>이 p 태그는 div 태그의 마지막 child 입니다!</p>
+	
+	</div>
+    
+     <p>이 외에도 다음과 같은 구조 의사 클래스들이 존재한다. </p>
+     <p>
+        :first-of-type	모든 자식(child) 요소 중에서 맨 처음으로 등장하는 특정 타입의 요소를 모두 선택함.
+        <br>:last-of-type	모든 자식(child) 요소 중에서 맨 마지막으로 등장하는 특정 타입의 요소를 모두 선택함.
+        <br>:nth-of-type	모든 자식(child) 요소 중에서 n번째로 등장하는 특정 타입의 요소를 모두 선택함.
+        <br>:nth-last-of-type	모든 자식(child) 요소 중에서 뒤에서부터 n번째로 등장하는 특정 타입의 요소를 모두 선택함.
+        <br>:only-child	자식(child) 요소를 단 하나만 가지는 요소의 자식(child) 요소를 모두 선택함.
+        <br>:only-of-type	자식(child)  요소로 특정 타입의 요소 단 하나만을 가지는 요소의 자식(child) 요소를 모두 선택함.
+        <br>:empty	자식(child) 요소를 전혀 가지고 있지 않은 요소를 모두 선택함.
+        <br>:root	문서의 root 요소를 선택함.
+     </p>
+</body>
+</html>

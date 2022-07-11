@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Variables</title>
+</head>
+
+<body>
+
+	<h1>1. 여러 변수의 선언과 초기화</h1>
+	<p id="date"></p>
+
+	<script>
+		var month, date;
+		var hours = 7, minutes = 15;
+		month = 10, date = 5;
+		
+		document.getElementById("date").innerHTML = 
+			"이번 모임의 날짜는 " + month + "월 " + date + "일입니다.<br>";
+		document.getElementById("date").innerHTML += 
+			hours + "시 " + minutes + "분까지 꼭 와주세요!";
+	</script>
+
+    <h1>2. 같은 변수에 다른 타입의 값 할당</h1>
+	<p id="result"></p>
+
+	<script>
+		var num = 10;		// 변수의 선언과 함께 초기화
+		document.getElementById("result").innerHTML = num + "<br>";
+		num = [10, 20, 30];	// 배열 할당
+		document.getElementById("result").innerHTML += num + "<br>";
+		var num; 			// 이 재선언문은 무시됨.
+		document.getElementById("result").innerHTML += num;
+	</script>
+	
+    
+</body>
+
+</html>

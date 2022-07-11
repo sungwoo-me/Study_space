@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. float 속성 </h3>
+    <p>float 속성은 HTML요소가 주변의 다른 요소들과 자연스럽게 어울리게 만들어 준다.</p>
+    <p>현재는 웹 페이지의 레이아웃을 작성할 때 자주 사용된다. </p>
+    <style>
+        img{float : left ;margin-right : 20px;}
+    </style>
+
+    <img src = "./cat.jpg" >
+    <p>이미지와 글자가 잘 어울리게 된다. </p>
+
+    <h3>2. claer 속성 </h3>
+    <p>claar 속성은 float 속성이 적용된 이후 나타나는 요소들의 동작을 조절해 줍니다.    </p>
+    <p>컨테이너 요소에 float 속성이 적용되면 그 이후 모든 요소들은 정확한 위치 설정이 힘들다. </p>
+    <p>float 속성을 적용하고자 하는 요소가 모두 등장한 후에는 반드시 clear속성을 사용하여 , 이후 요소들이 영향을 받지 안도록 해야한다. </p>
+    <style>
+
+        .left { background-color: #FF8C00; width: 150px; height: 50px; float: left; }
+    
+        .right { background-color: #9932CC; width: 150px; height: 50px; float: right; }
+    
+        p { clear: both; }
+    
+    </style>
+
+    <h3>3. overflow 속성 : 컨테이너 요소 크기를 자동으로 커지게 한다.</h3>
+    <style>
+
+        div.page { border: 3px solid #CD5C5C; overflow: auto; }
+    
+        h2 { text-align: center; }
+    
+        header{ border: 3px solid #FFD700; }
+    
+        nav { border: 3px ​​​​​​​solid #FF1493; width: 150px; float: left; }
+    
+        section { border: 3px ​​​​​​​solid #00BFFF; margin-left: 156px; }
+    
+        footer{ border: 3px ​​​​​​​solid #00FA9A; }
+    
+    </style>
+
+    <h3>float 속성을 이용한 레이아웃</h1>
+    <div class="page">
+        
+        <header>
+            <h2>header 영역</h2>
+        </header>
+        <nav>
+            <h2>nav 영역</h2>
+            <p>여기에는 보통 메뉴가 들어갑니다.</p>
+        </nav>
+        <section>
+            <h2>section 영역</h2>
+            <p>여기에는 페이지에 해당하는 내용이 들어갑니다.<br>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare sapien suscipit tincidunt ullamcorper. Cras ac sem sed mauris maximus rhoncus vel in metus. Nam pharetra arcu sit amet dolor interdum, eget scelerisque libero finibus. Phasellus quis vulputate ante. Fusce sit amet viverra justo. Donec id elementum mauris. Nam id porttitor nisl, et suscipit nunc. Vestibulum sit amet volutpat quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis placerat sem eu facilisis ultricies.
+            </p>
+        </section>
+        <footer>
+            <h2>footer 영역</h2>
+        </footer>
+    </div>
+
+</body>
+</html>

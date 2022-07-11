@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>setTimeout() 메소드</h1>
+
+    <button onclick="startTimeout()">2초 뒤에 현재 시간을 표시합니다!</button>
+	<p id="date"></p>
+		
+	<script>
+		function startTimeout() {
+			setTimeout(printCurrentDate, 2000);
+		}
+		function printCurrentDate() {
+			document.getElementById("date").innerHTML = new Date();
+		}
+	</script>
+	
+
+    <h1>setInterval() 메소드</h1>
+	<button onclick="startInterval()">2초마다 현재 시간을 표시합니다!</button>
+	<p id="date1"></p>
+		
+	<script>
+		function startInterval() {
+			setInterval(printCurrentDate, 2000);
+		}
+		function printCurrentDate() {
+			document.getElementById("date1").innerHTML += new Date() + "<br>";
+		}
+	</script>
+	
+    <h1>clearTimeout() 메소드</h1>
+	<button onclick="startTimeout()">2초 뒤에 현재 시간을 표시합니다!</button>
+	<button onclick="cancelTimeout()">시간 표시 취소!</button>
+	<p id="date2"></p>
+		
+	<script>
+		var timeoutId;
+		function startTimeout() {
+			timeoutId = setTimeout(printCurrentDate, 2000);
+		}
+		function cancelTimeout() {
+			clearTimeout(timeoutId);
+		}
+		function printCurrentDate() {
+			document.getElementById("date2").innerHTML += new Date() + "<br>";
+		}
+	</script>
+
+    
+	<h1>setInterval() 메소드</h1>
+	<button onclick="startInterval()">2초마다 현재 시간을 표시합니다!</button>
+	<button onclick="cancelInterval()">시간 갱신 중지!</button>
+	<p id="date3"></p>
+		
+	<script>
+		var timeoutId;
+		function startInterval() {
+			timeoutId = setInterval(printCurrentDate, 2000);
+		}
+		function cancelInterval() {
+			clearInterval(timeoutId);
+		}
+		function printCurrentDate() {
+			document.getElementById("date3").innerHTML += new Date() + "<br>";
+		}
+	</script>
+</body>
+</html>

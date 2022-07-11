@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+</head>
+<body>
+
+    <!-- img 태그 기본 구조 
+    <img src = "이미지주소" alt="대체문자열">
+    -->
+
+    <h3> 1. 이미지 삽입 </h3>
+    <img src = "./chicken.jpg" alt = "사진 없을시 메세지 ">
+
+
+    <h3> 2. 이미지 크기 설정 </h3>
+
+    <img src = "./chicken.jpg" alt = "사진 없을시 메세지 " style = " width:300px ; height:200px" >
+
+    <h3> 3. 이미지 테두리 설정 </h3>
+
+    <img src="./chicken.jpg" alt ="대체 메세지" style = " width:300px ; height:200px; border : 3px solid black" >
+
+    <h4> 4. 이미지 링크 설정 : 이미지 클릭시 연결 </h4>
+
+    <a href="https://blog.naver.com/awhtjddn1" target = "_blank">
+        <img src="./chicken.jpg" alt = "사진 없을 시 메세지" style = "width:320px; height: 200px">
+    </a>
+
+    <h4> 5. map 태그 : 이미지 맵 만들기 </h4>
+
+    <img src="./고양이_강아지.png" alt="대체메세지(오류)" usemap="#vending" style="width:300px; height:200px" />
+
+    <map name="vending">
+    
+        <area shape="rect" coords="0,0,100,200" alt="고양이" target = "_blank"
+    
+            href="https://www.google.com/search?q=%EA%B3%A0%EC%96%91%EC%9D%B4&tbm=isch&ved=2ahUKEwjDg6OJt_r1AhWvyIsBHbZ6D-UQ2-cCegQIABAA&oq=%EA%B3%A0%EC%96%91%EC%9D%B4&gs_lcp=CgNpbWcQAzIHCCMQ7wMQJzIICAAQgAQQsQMyCAgAEIAEELEDMggIABCABBCxAzIICAAQgAQQsQMyCwgAEIAEELEDEIMBMggIABCABBCxAzIICAAQgAQQsQMyCAgAEIAEELEDMggIABCABBCxAzoFCAAQgAQ6CAgAELEDEIMBUIAGWIkPYI0QaAFwAHgBgAFsiAGfBpIBAzQuNJgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=hMsHYsOxB6-Rr7wPtvW9qA4&bih=1376&biw=1911&hl=ko">
+    
+        <area shape="rect" coords="100,0,300,200" alt="강아지" target = "_blank"
+    
+            href="https://www.google.com/search?q=%EA%B0%95%EC%95%84%EC%A7%80&hl=ko&sxsrf=APq-WBvj_Z81PqJ5Dz4q-46Urssjceujlw:1644678017687&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjDk46It_r1AhURBt4KHTVWB2cQ_AUoAXoECBsQAw&biw=1911&bih=1376&dpr=0.9">
+            
+    </map>
+    
+    
+
+</body>
+</html>

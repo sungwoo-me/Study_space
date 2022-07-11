@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript EventListener</title>
+</head>
+
+<body>
+
+	<h1>자바스크립트 코드에서 프로퍼티로 등록</h1>
+	<p id="text">이 문자열은 HTML 문서가 로드되면 다른 문자열로 바뀔 것입니다.</p>
+		
+	<script>
+		window.onload = function() {	// 이 함수는 HTML 문서가 로드될 때 실행됨.
+			var text = document.getElementById("text");		// 아이디가 "text"인 요소를 선택함.
+			text.innerHTML = "HTML 문서가 로드되었습니다.";
+		}
+	</script>
+	
+    <h1>HTML 태그 내의 속성으로 등록</h1>
+	<p onclick="alert('문자열을 클릭했어요!')">이 문자열을 클릭해 보세요!</p>
+
+
+	<h1>addEventListener() 메소드</h1>
+	<button id="btn">텍스트 보여주기!</button>
+    <p>대상객체.addEventListener(이벤트명, 실행할이벤트리스너, 이벤트전파방식)    </p>
+	<p id="text2"></p>
+
+	<script>
+		var showBtn = document.getElementById("btn");	// 아이디가 "btn"인 요소를 선택함.
+		showBtn.addEventListener("click", showText);	// 선택한 요소에 click 이벤트 리스너를 등록함.
+		function showText() {
+			document.getElementById("text2").innerHTML = "짜잔~!! 텍스트가 나타났어요!!";
+		}
+	</script>
+
+
+	<h1>여러 개의 이벤트 리스너 등록</h1>
+	<p>아래 버튼에 마우스를 올리거나 클릭해 보세요!</p>
+	<button id="btn2">버튼</button>
+	<p id="text3"></p>
+
+	<script>
+		var btn = document.getElementById("btn2");			// 아이디가 "btn"인 요소를 선택함.
+		btn.addEventListener("click", clickBtn);			// 선택한 요소에 click 이벤트 리스너를 등록함.
+		btn.addEventListener("mouseover", mouseoverBtn);	// 선택한 요소에 mouseover 이벤트 리스너를 등록함.
+		btn.addEventListener("mouseout", mouseoutBtn);		// 선택한 요소에 mouseout 이벤트 리스너를 등록함.
+
+		function clickBtn() {
+            btn.removeEventListener("mouseover", mouseoverBtn);
+			btn.removeEventListener("mouseout", mouseoutBtn);
+			document.getElementById("text3").innerHTML = "이벤트 리스너가 삭제되었어요!";	
+        	}
+		function mouseoverBtn() {
+			document.getElementById("text3").innerHTML = "버튼 위에 마우스가 있네요!";
+		}
+		function mouseoutBtn() {
+			document.getElementById("text3").innerHTML = "버튼 밖으로 마우스가 나갔어요!";
+		}
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. margin속성을 이용한 가운데 정렬 </h3>
+    <p> margin 속성값을 auto로 하면 자동으로 가운데 정렬이 된다.</p>
+    <p> 이 방법을 사용하기 위해서는 반드시 width 속성값을 먼저 설정해야 한다.</p>
+
+    <style>
+
+        div.num1 { width: 300px; margin: auto; }
+    
+    </style>
+
+    <h4>margin 속성을 이용한 가운데 정렬</h4>
+	<div class = "num1">
+    margin의 속성값을 auto로 하면,<br>
+	수평으로 가운데 정렬을 할 수 있어요!
+	</div>
+
+
+    <h3>2. position 속성을 이용한 좌우 정렬 </h3>
+    <p>절대 위치 지정 방식으로 위치한 요소는 다른 요소와 겹칠 수 있다. </p>
+    <p>따라사 position을 사용하여 정렬을 한다. </p>
+    
+    <style>
+        div.num2 { width: 300px; padding: 10px; margin: 0; position: absolute; right: 0; }
+    </style>
+
+    
+	<h4>position 속성을 이용한 좌우 정렬</h4>
+	<div class = "num2">absolute position을 사용하면,<br>
+	수평으로 좌우 정렬을 할 수 있어요!
+	</div>
+
+</body>
+</html>
