@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<ㅠ>
+    <!--
+        1. div 태그 
+            - 블록 요소 
+            - 특별한 의미가 없는 구분을 위한 요소 
+            - Division 
+
+        2. h 태그 
+            - 블록 요소 
+            - 제목을 의미하는 요소 (Heading)
+        
+        3. p 태그 
+            - 블록 요소 
+            - 문장을 의미하는 요소 (paragraph). 
+            - 뒤에 숫자가 작을수록 더 큰사이즈 더 중요한 제목 
+
+        4. img 태그 
+            - 인라인 요소 (글자를 취급 안하는 예외적인 경우)
+            - 이미지를 삽입하는 요소 (image)
+            - src : 삽입할 이미지의 경로
+            - alt : 삽입할 이미지의 이름 (이미지가 없을 경우 뜰 텍스트)
+        
+        
+        5. ul태그 
+            - 블록요소
+            - 순서가 필요없는 목록의 집합을 의미 (Unordered List)
+            - li 태그가 무조건 한개 이상 필요
+        
+        6. Li 태그 
+            - 블록 요소
+            - 목록 내 각 항목 (List item)
+            - 반드시 ul 태그 안에 존재 
+        
+        7. a태그 
+            - 인라인 요소 
+            - 다른/같은 페이지로 이동하는 하이퍼링크를 지정하는 요소 (Anchor
+            - href : 링크 URL 
+            - target : 링크 URL의 표시위치 
+                1. _blank : 새로운 탭에 창을 연다. 이외에도 여러가지 더 있다. 
+        
+        8. span 태그 
+            - 인라인 요소 
+            - 특별한 의미가 없는 구분을 위한 요소 
+            - 글자에 범위를 잡아서 특정한 무언가를 할떄 주로 사용 
+            
+        9. br 태그 
+            - 인라인 요소 
+            - 줄바꿈 요소 (Break)
+        
+        10. input 태그
+            - 인라인-블록 요소 
+            - 사용자가 데이터를 입력하는 요소 . 
+            - 인라인이지만 여백이나 가로 세로를 설정 가능하다. (특징)
+            - type : 입렵받을 데이터의 타입 
+                checkbox : 사용자에게 체크 여부를 입력 받음 / checked : 미리 체크하기 
+                radio    : 같은 그룹안에서 1개만 체크 가능 name을 통해 그룹 지어나야함 
+            - value : 미리 입력된 값(데이터)
+            - placeholder : 사용자가 입력할 값의 힌트 
+            - disabled : 입력 요소 비활성화 / 화면에는 보이지만 입력이 안되는 특성 
+
+        11. label 태그 
+            - 인라인 요소 
+            - 라벨 가능 요소(input)의 제목. 
+            - 제목을 클릭해도 선택 된다. 
+
+        12. table 태그 
+            - 테이블 요소 
+            - 표 요소, 행(Row)과 열(Column)의 집합. 
+        
+        12-1 : tr 태그
+            - 테이블에 행을 구성 
+        
+        12-2 : td 태그 
+            - 테이블에 열을 지정하는 요소 (Table Data)
+    -->
+
+    <div>
+        <h1>오늘의 날씨</h1>
+        <p>중부 집중호우, 남부는 열대야, 12호 태풍 북상중 . . </p>
+        <img src="img/weather.jpg" alt="12호 태풍" />
+    </div>
+
+    <ul>
+        <li>사과</li>
+        <li>딸기</li>
+        <li>수박</li>
+        <li>오렌지</li>
+    </ul>
+
+    <a href="https://www.naver.com" target = "_blank">Naver</a>
+
+    <span>아무 <br/> 의미 없지롱 </span>
+    <br/>
+
+    <label>
+        <input type="checkbox"/> 23살        
+    </label>
+
+    <label>
+        <input type="checkbox"/> 26살        
+    </label>
+
+    <br/>
+
+    <input type="text" value="성우" placeholder="이름을 입력하세요 "/> 
+
+    <label>
+        <input type="radio" name = "age" /> 23살        
+    </label>
+
+    <label>
+        <input type="radio" name = "age" /> 24살        
+    </label>
+
+    <label>
+        <input type="radio" name = "age" /> 25살        
+    </label>
+
+    <table>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
