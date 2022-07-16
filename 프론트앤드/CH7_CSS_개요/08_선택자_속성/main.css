@@ -1,0 +1,22 @@
+/* 
+속성 선택자 
+
+1. [ABC] 
+- 속성 ABC을 포함한 요소 선택 
+ex) [type] {
+    color : red;
+    }
+
+<input type = "text" value = "HEROPY"> -> 이중 type 속성을 포함한 요소를 선택
+
+
+2. [ABC="XYZ"]  
+- 속성 ABC을 포함하고 값이 XYZ인 요소 선택 
+ex) [type = "password] {
+    color : red;
+    }
+
+<input type = "text" value = "HEROPY"> -> 
+<input type = "password" value = "HEROPY"> -> type 속성중 값이 password인 요소를 선택
+
+*/

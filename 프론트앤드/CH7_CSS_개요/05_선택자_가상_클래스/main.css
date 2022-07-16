@@ -1,0 +1,30 @@
+.box {
+    width : 100px;
+    height : 100px;
+    background: orange;
+    transition :1s ; 
+}
+
+/* 
+가상 클래스 선택자 : 무언가 행동을 했을떄 나오는 결과물  
+
+1. ABC:hover 
+- 선택자 ABC 요소에 마우스 커서가 올라가 있는 동안 선택  
+
+2. ABC:active 
+- 선택자 ABC 요소에 마우스를 클릭하고 있는 동안 선택.
+
+3. ABC:focus 
+- 선택자 ABC 요소가 포커스되면 선택 
+- 가능한 요소에서만 동작한다. ex) input , select 요소와 같은 소수 요소 
+- tabindex="-1" 을 통해 불가능한 요소에서도 사용 가능 
+*/
+
+.box:focus {
+    width : 300px;
+    background-color: royalblue;
+}
+
+input:focus{
+    background-color: orange;
+}

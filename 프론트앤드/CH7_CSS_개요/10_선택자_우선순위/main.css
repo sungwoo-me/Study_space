@@ -1,0 +1,18 @@
+/* 
+
+우선순위
+- 우선순위란, 같은 요소가 여러 선언의 대상이 된 경우, 어떤 선언의 CSS 속성을 우선 적용할지 결정하는 벙법
+
+1. 점수가 높은 선언이 우선함 ! 
+2. 점수가 같으면 가장 마지막에 해석된 선언이 우선함 
+
+
+*/
+
+
+div { color : red !important;}
+#color_yellow { color : yellow ;}
+.color_green { color : green ;}
+div {color : blue ; }
+* {color : darkblue ;}
+body {color :violet}

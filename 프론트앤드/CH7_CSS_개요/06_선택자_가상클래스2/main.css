@@ -1,0 +1,66 @@
+/* 
+
+가산 클래스 선택자 
+
+1. ABC:first-child 
+- 선택자 ABC가 형제 요소 중 첫쨰라면 선택 
+ex) .fruits span:first-child -> 딸기가 선택된다. fruits 클래스에 span 태그 중 첫째가 선택 
+
+ex) .fruits div:first-child -> fruits 에 첫쨰가 div가 아니기 때문에 선택이 되지 않는다 . 
+
+<div class = "fruits">
+    <sapn>딸기</span>
+    <sapn>수박</span>
+    <div>오렌지</div>
+    <p>망고</p>
+    <h3>사과</h3>
+</div>
+
+
+2. ABC:last-child 
+- 선택자 ABC가 형제 요소 중 막내라면 선택. 
+ex) .fruits h3:last-child -> fruits 자식중 h3가 막내이기 때문에 선택이 가능하다. 
+
+<div class = "fruits">
+    <sapn>딸기</span>
+    <sapn>수박</span>
+    <div>오렌지</div>
+    <p>망고</p>
+    <h3>사과</h3>
+</div>
+
+3. ABC:nth-child(n) 
+- 선택자 ABC가 형제 요소 중 (n)째 라면 선택.
+.fruits *:nth-child(2) -> fruits 에 후손 중 전체 선택자중 2번째 형제를 선택 -> 즉 수박이 선택된다. 
+.fruits *:nth-child(2n) -> 짝수선택 : n은 0부터 세고 거기에 그 앞에 숫자를 곱한다. 즉 0, 2, 4 번째가 선택되어 수박과 망고가 선택된다. 
+.fruits *:nth-child(2n+1) -> 홀수선택 :  n은 0부터 세고 거기에 그 앞에 숫자를 곱한후 1을 더한다. . 즉 1, 3, 5번째가 선택되어 수박과 망고가 선택된다. 
+.fruits *:nth-child(n+2) -> 2번째 부터 쭉 선택 : n은 0부터 시작이고 거기에 그 앞에 숫자를 더한다 . 즉 2, 3, 4 ,5번째가 선택되어 수박과 망고가 선택된다. 
+
+
+<div class = "fruits">
+    <sapn>딸기</span>
+    <sapn>수박</span>
+    <div>오렌지</div>
+    <p>망고</p>
+    <h3>사과</h3>
+</div>
+
+4. ABC:not(XYZ) 
+- 선택자 XYZ가 아닌 ABC요소 선택 . 
+ex)
+.fruits *:not(span) -> 전체 선택자 중에 span이 아닌 선택자들을 선택 즉 오렌지 망고 사과 선택 
+
+<div class = "fruits">
+    <sapn>딸기</span>
+    <sapn>수박</span>
+    <div>오렌지</div>
+    <p>망고</p>
+    <h3>사과</h3>
+</div>
+
+
+
+
+
+
+*/

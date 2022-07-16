@@ -1,0 +1,35 @@
+/* 
+선택자 가장 요소 
+
+# content 는 내용을 명시하는 속성이다. 
+
+1. ABC::before  **** 자주 쓰인다. *****
+- 인라인 요소
+- 선택자 ABC 요소의 내부 앞에 내용(content)을 삽입. 
+- 무조건 content속성을 사용해야 한다. 
+
+ex) .box::before {
+    content: "앞1" ; 
+    }
+
+<div class = "box">
+    여기에 앞이 출력이 된다           
+    일반 텍스트  
+</div>
+
+2. ABC::after  **** 자주 쓰인다. *****
+- 인라인 요소
+- 선택자 ABC 요소의 내부 뒤에 내용(content)을 삽입. 
+- 무조건 content속성을 사용해야 한다. 
+
+ex) .box::before {
+    content: "뒤!" ; 
+    }
+
+<div class = "box">
+
+    일반 텍스트  
+    여기에 "뒤!"  출력이 된다           
+</div>
+
+*/

@@ -1,0 +1,27 @@
+/* 
+스타일 상속
+- 부모 밑에 자손들에게 css를 상속시켜 같이 적용시킨다 . 
+- 즉 animal 밑에 모든 class 에게 상속
+- 글자와 문자 관련된 속성들은 상속이 된다. (단 모은 속성은 아니다. ) 
+
+강제 상속 
+- inherit : 부모 요소로 부터 해당 속성을 상속 받아서 사용하라는 뜻 
+- 하나만 바꿔도 되서 매우 유용하고 효율적이다. 
+*/
+
+.animal{
+    color : red ;
+}
+
+
+.parent {
+    width: 300px ;
+    height: 400px; 
+    background-color: red;
+}
+
+.child {
+    width: 100px;
+    height: inherit;
+    background-color: orange;
+}
