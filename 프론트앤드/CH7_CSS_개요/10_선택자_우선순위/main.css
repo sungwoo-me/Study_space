@@ -7,12 +7,21 @@
 2. 점수가 같으면 가장 마지막에 해석된 선언이 우선함 
 
 
+!important                          : 999999999999점
+인라인 선언 (html에 직접 style 작성)  : 1000점 
+ID 선택자   (#color_yellow)          : 100 점
+Class 선택자  (.color_green)         : 10 점
+태그 선택자  (div)                   : 1 점
+전체 선택자 (*, body)                : 0 점
+
+
 */
 
 
-div { color : red !important;}
+
+div { color : red !important;}     
 #color_yellow { color : yellow ;}
 .color_green { color : green ;}
 div {color : blue ; }
-* {color : darkblue ;}
 body {color :violet}
+* {color : darkblue ;}
