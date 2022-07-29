@@ -2,6 +2,7 @@
 box-sizing : 요소의 크기 계산 기준을 지정
 - content-box   : 요소의 내용으로 크기 계산
 - border-box    : 요소의 내용 + padding + border 로 크기 계산 
+    -> 이걸 사용시 안에 다 포함해서 크기 계산해서 사이즈 유지 가능 
 
 */
 

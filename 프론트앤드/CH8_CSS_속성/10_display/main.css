@@ -1,0 +1,23 @@
+/* 
+display : 요소의 화면 출력 특성 
+    - block         : 상자(레이아웃) 요소 
+    - inline        : 글자 요소 
+    - inline-block  : 글자 + 상자 요소 
+    - flex          : 플렉스 박스 (1차원 레이아웃)
+    - grid          : 그리드 (2차원 레이아웃) 
+    - none          : 보여짐 특성 없음, 화면에서 사라짐
+    - 기타          : table, talbe-row, table-cell 등 .... 
+*/
+
+body {
+    margin :20px ;
+
+}
+
+span {
+    display :block ;  /* 디스플레이를 통해 span이라는 인라인 요소를 가로 세로 넓이를 줄 수 있다. */
+    width : 120 px ;
+    height : 30 px ;
+    background-color: royalblue;
+    color : white ;
+}

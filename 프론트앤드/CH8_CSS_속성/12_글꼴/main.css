@@ -1,0 +1,38 @@
+/* 
+    font-style : 글자의 기울기
+        - normal    : 기울기 없음
+        - italic    : 이텔릭 체
+    
+    font-weight : 글자의 두께(가중치)
+        - normal    : 기본 두께
+        - bold      : 두껍게
+        - 100~900   : 100단위 숫자 9개 
+
+    font-size   : 글자의 크기
+        - 16px      : 기본 크기
+        - 단위      : px,em,rem등 단위로 지정 
+    
+    line-height : 한줄의 높이
+        - normal    : 브라우저의 기본 정의를 사용
+        - 숫자      : 요소의 글꼴 크기의 배수로 지정
+        - 단위      : px,em,rem 등의 단위로 지정 
+
+    font-falmily : "글꼴1", "글꼴2" , .... 글꼴계열 ; 
+
+*/
+
+
+h1 {
+
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+p {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid;
+    box-sizing: border-box;
+    line-height: 1.4;
+}

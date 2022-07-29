@@ -1,0 +1,42 @@
+/* 
+
+position : 요소의 위치 지정 기준 (top, bottom, left, right, z-index)
+    - static    : 기준 없음
+    - relative  : 요소 자신을 기준 (위치상 부모 요소로 지정해주는데 사용) 
+    - absolute  : 위치 상 부모 요소를 기준 (위치상 부모 요소 꼭 확인)
+        -> 위치상 부모 요소가 뷰포트가 되는거 조심 ! 부모에 relative 사용해서 해결
+    - fixed     : 뷰포트를 기준
+    
+
+
+
+*/
+
+
+.container{
+    width: 300px;
+    background-color: royalblue;
+    position: relative;
+}
+
+.container .item {
+    border : 4px dashed red ;
+    background-color: orange;
+    
+}
+
+.container .item:nth-child(1) {
+    width: 100px;
+    height: 100px;
+}
+.container .item:nth-child(2) {
+    width: 140px;
+    height: 70px;
+    position: absolute; 
+    right: 10px;
+    bottom: 10px;
+}
+.container .item:nth-child(3) {
+    width: 70px;
+    height: 120px;
+}
