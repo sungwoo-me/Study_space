@@ -1,0 +1,61 @@
+/* 
+
+    transform : 변환함수1 변환함수2 변환함수3 ..... ;
+    transform : 원근법 이동 크기 회전 기울임 ; 
+
+    2D 변환 함수 
+        - translate(x,y)    : 이동(x축, y축)
+        - translateX(x)     : 이동(x)
+        - translateX(y)     : 이동(y)
+        - scale(x,y)        : 크기(x축, y축)
+        - rotate(degree)    : 회전(각도)
+        - skewX(x)          : 기울임(x축)
+        - skewY(y)          : 기울임(y축)
+
+
+
+    3D 변환 함수 
+        - rotate(x)         : 회전(x축)
+        - rotate(y)         : 회전(y축)
+        - perspective(n)    : 원근법(거리) (제일 앞에 작성해야한다. !!! 무조건 !!!! )
+
+
+    perspecive 속성과 함수의 차이 이해하기 
+        perspective 속성 -> 부모 요소에서 바라보는 시선 (이걸 더 선호한다. )  
+        perspective 함수 -> 관찰 대상에서 바라보는 시선 
+
+
+    backface-visibility : 3D 변환으로 회전된 요소의 뒷면 숨김 여부
+        visible         : 뒷면 보임
+        hidden          : 뒷면 숨김 
+
+    
+
+*/
+
+
+
+body { 
+    padding : 100px ; 
+}
+
+.container {
+    width: 100px;   
+    height: 100px;
+    background-color: royalblue;
+    perspective: 250px;
+}
+
+.container .item {
+    width: 100px ;
+    height: 100px ;
+    background-color: orange;
+    /* transform : perspective(500px) rotateX(45deg) scale(0.9); */
+    font-size: 60px;
+    display : flex ; 
+    justify-content: center ;
+    align-items:  center ;
+    transform: rotateX(45deg);
+    backface-visibility: hidden;
+    
+}
