@@ -32,9 +32,15 @@
 
 let myName = "SUNGWOO"; 
 let email = 'awhtjddn1@naver.com' ;
-let hello = ` Hello ${123} ?! `
+let hello = ` Hello ${123} ?! ` ;
 
+let user = {
+    name : 'Sungwoo',
+    age : 85
+}
+// 이렇게 보관하기 위해서는 `이거를 꼭 써야함 ' 랑 다른거임 
 
 console.log(myName);
 console.log(email); 
 console.log(hello); 
+console.log(user.age) ;
